@@ -1,0 +1,3079 @@
+/*========== RESET ==========*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+}
+
+/*================ NAVBAR ================*/
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    height:70px;
+    padding:0 60px;
+
+    background:rgba(17,17,17,.95);
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid #242424;
+}
+
+/*================ LOGO ================*/
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:30px;
+    font-weight:700;
+    color:#fff;
+
+    cursor:pointer;
+}
+
+.logo i{
+    color:#ff7a00;
+    transition:.4s ease;
+}
+
+.logo span{
+    transition:.3s ease;
+}
+
+.logo:hover i{
+    transform:rotate(-15deg) scale(1.15);
+}
+
+.logo:hover span{
+    color:#ff7a00;
+}
+
+/*================ NAVIGATION ================*/
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    position:relative;
+
+    color:#ddd;
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:500;
+
+    transition:.3s ease;
+}
+
+
+/* Animated Underline */
+
+nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #ff7a00;
+
+    border-radius: 5px;
+
+    transform: translateX(-50%);
+
+    transition: width .35s ease;
+
+}
+
+
+/* Show only while hovering */
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/*================ RIGHT SIDE ================*/
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/*================ SEARCH BOX ================*/
+
+.search-box{
+    width:290px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 15px;
+
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:50px;
+
+    transition:.35s ease;
+}
+
+.search-box:hover,
+.search-box:focus-within{
+    border-color:#ff7a00;
+    box-shadow:0 0 15px rgba(255,122,0,.25);
+}
+
+.search-box input{
+    flex:1;
+
+    border:none;
+    outline:none;
+    background:transparent;
+
+    color:#fff;
+    font-size:14px;
+}
+
+.search-box input::placeholder{
+    color:#888;
+}
+
+.search-box i{
+    color:#888;
+    transition:.3s;
+}
+
+.search-box:hover i,
+.search-box:focus-within i{
+    color:#ff7a00;
+}
+
+/*================ GET STARTED BUTTON ================*/
+
+header button{
+    padding:12px 26px;
+
+    background:#ff7a00;
+    color:#fff;
+
+    border:none;
+    border-radius:50px;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    box-shadow:0 8px 20px rgba(255,122,0,.25);
+}
+
+header button:hover{
+    background:#ff8c1a;
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(255,122,0,.4),
+        0 0 25px rgba(255,122,0,.2);
+}
+
+header button:active{
+    transform:scale(.97);
+}
+
+/*================ HERO ================*/
+
+.hero{
+    height:360px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(10,10,10,.98) 0%,
+        rgba(10,10,10,.95) 30%,
+        rgba(10,10,10,.70) 50%,
+        rgba(10,10,10,.20) 68%,
+        rgba(10,10,10,.55) 100%
+    ),
+    url("../images/guide.png");
+
+    background-size:cover;
+    background-position:right center;
+    background-repeat:no-repeat;
+
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.hero-overlay{
+    width:100%;
+    max-width:1300px;
+    margin:auto;
+    padding:0 25px;
+}
+
+.hero-content{
+    width: 560px;
+}
+
+
+/* Heading */
+.hero-content h1{
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+/* Paragraph */
+.hero-content p{
+    font-size: 18px;
+    line-height: 1.7;
+    color: #bdbdbd;
+    margin-bottom: 28px;
+    max-width: 500px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+/*================ BUTTONS ================*/
+
+.btn-primary,
+.btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:13px 26px;
+
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+
+    border-radius:50px;
+    cursor:pointer;
+
+    transition:all .35s ease;
+}
+
+/*================ PRIMARY BUTTON ================*/
+
+.btn-primary{
+    position:relative;
+    overflow:hidden;
+
+    background:#ff7a00;
+    color:#fff;
+
+    box-shadow:
+        0 8px 18px rgba(255,122,0,.35),
+        0 0 30px rgba(255,122,0,.18);
+}
+
+/* Keep text above shine */
+.btn-primary span,
+.btn-primary i{
+    position:relative;
+    z-index:2;
+}
+
+/* Shine Effect */
+.btn-primary::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+    transition:.75s ease;
+}
+
+.btn-primary:hover::before{
+    left:140%;
+}
+
+/* Hover Effect */
+.btn-primary:hover{
+    background:#ff8c1a;
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(255,122,0,.45),
+        0 0 35px rgba(255,122,0,.25);
+}
+
+/* Arrow Animation */
+.btn-primary i{
+    transition:transform .3s ease;
+}
+
+.btn-primary:hover i{
+    transform:translateX(5px);
+}
+
+/* Click Effect */
+.btn-primary:active{
+    transform:scale(.97);
+}
+
+/*================ SECONDARY BUTTON ================*/
+
+.btn-secondary{
+    background:transparent;
+    color:#fff;
+
+    border:2px solid #444;
+}
+
+.btn-secondary:hover{
+    border-color:#ff7a00;
+    color:#ff7a00;
+
+    background:rgba(255,122,0,.08);
+
+    box-shadow:0 0 18px rgba(255,122,0,.18);
+
+    transform:translateY(-4px);
+}
+
+.btn-secondary:active{
+    transform:scale(.97);
+}
+
+/*================ HARDWARE SECTION ================*/
+
+.hardware-section {
+
+    padding: 35px 25px;
+
+    background: #0c0d0e;
+
+}
+
+
+.hardware-container {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 3fr 1.2fr;
+
+    gap: 20px;
+
+}
+
+
+/*================ HARDWARE PANEL ================*/
+
+.hardware-left {
+
+    padding: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #111
+    );
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.02);
+
+}
+
+
+/*================ PROBLEMS PANEL ================*/
+
+.hardware-right {
+
+    padding: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #111
+    );
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.02);
+
+}
+
+
+/*================ SECTION HEADING ================*/
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 20px;
+
+    margin: 0;
+
+}
+
+
+.view-all {
+
+    color: #ff7a00;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+.view-all i {
+
+    margin-left: 5px;
+
+    transition: .3s;
+
+}
+
+
+.view-all:hover i {
+
+    transform: translateX(5px);
+
+}
+
+
+/*================ HARDWARE GRID ================*/
+
+.hardware-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.hardware-card {
+
+    background: #1c1c1c;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    transition: .35s ease;
+
+}
+
+
+.hardware-card img {
+
+    width: 100%;
+
+    height: 125px;
+
+    object-fit: contain;
+
+    transition: .35s;
+
+}
+
+
+.hardware-card h3 {
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+}
+
+
+.hardware-card span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #999;
+
+    font-size: 11px;
+
+}
+
+
+.hardware-card a {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #ff7a00;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+}
+
+
+.hardware-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #ff7a00;
+
+    box-shadow: 0 10px 25px rgba(255,122,0,.15);
+
+}
+
+
+.hardware-card:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+/*================ PROBLEM LIST ================*/
+
+.problem-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.problem-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    background: #1c1c1c;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 9px;
+
+    transition: .3s;
+
+}
+
+
+.problem-item i {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #291b0e;
+
+    border-radius: 7px;
+
+    color: #ff7a00;
+
+}
+
+
+.problem-item h4 {
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.problem-item span {
+
+    color: #777;
+
+    font-size: 10px;
+
+}
+
+
+.problem-item:hover {
+
+    transform: translateX(5px);
+
+    border-color: #ff7a00;
+
+}
+
+/*================ RESPONSIVE ================*/
+
+@media (max-width: 1100px) {
+
+    .hardware-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .hardware-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hardware-section {
+
+        padding: 30px 20px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hardware-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+/*================ SEARCH SECTION ================*/
+
+.search-section{
+
+    max-width:1300px;
+
+    margin:25px auto;
+
+    padding:18px 25px;
+
+    background:#151515;
+
+    border:1px solid #252525;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.search-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.search-icon{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#1f1f1f;
+
+    border-radius:50%;
+
+    color:#ff7a00;
+
+    font-size:20px;
+
+}
+
+.search-text h3{
+
+    font-size:20px;
+
+}
+
+.search-text p{
+
+    font-size:14px;
+
+    color:#888;
+
+    margin-top:4px;
+
+}
+
+.repair-search{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.repair-search input{
+
+    width:420px;
+
+    height:42px;
+
+    padding:0 15px;
+
+    background:#101010;
+
+    border:1px solid #2d2d2d;
+
+    color:white;
+
+    border-radius:8px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.repair-search input:focus{
+
+    border-color:#ff7a00;
+
+}
+
+.repair-search button{
+
+    padding:0 22px;
+
+    background:#ff7a00;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.repair-search button:hover{
+
+    background:#ff8d1f;
+
+}
+
+/* =========================================
+   FIXIT COLOR THEME
+========================================= */
+
+:root {
+
+    --fixit-orange: #ff7a00;
+
+    --fixit-light-orange: #ff9d3d;
+
+    --fixit-orange-glow: rgba(255, 122, 0, 0.25);
+
+}
+
+
+/* =========================================
+   PREVENTIVE MAINTENANCE SECTION
+========================================= */
+
+.preventive-section {
+
+    position: relative;
+
+    padding: 110px 8%;
+
+    background:
+
+        radial-gradient(
+
+            circle at top right,
+
+            rgba(255, 122, 0, 0.08),
+
+            transparent 35%
+
+        ),
+
+        #080b12;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.preventive-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border: 1px solid rgba(255, 122, 0, 0.12);
+
+    border-radius: 50%;
+
+    top: -120px;
+
+    right: -100px;
+
+}
+
+
+.preventive-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border: 1px solid rgba(255, 122, 0, 0.05);
+
+    border-radius: 50%;
+
+    bottom: -300px;
+
+    left: -200px;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.preventive-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+
+}
+
+
+.section-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 16px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(255, 122, 0, 0.25);
+
+    border-radius: 30px;
+
+    background: rgba(255, 122, 0, 0.06);
+
+    color: var(--fixit-orange);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.preventive-header h2 {
+
+    margin: 0;
+
+    font-size: clamp(36px, 5vw, 64px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+}
+
+
+.preventive-header h2 span {
+
+    color: var(--fixit-orange);
+
+}
+
+
+.preventive-header p {
+
+    max-width: 600px;
+
+    margin: 22px auto 0;
+
+    color: #9da5b4;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   CARD GRID
+========================================= */
+
+.preventive-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+}
+
+
+/* =========================================
+   PREVENTIVE CARD
+========================================= */
+
+.preventive-card {
+
+    position: relative;
+
+    padding: 32px;
+
+    min-height: 300px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(255, 255, 255, 0.06),
+
+            rgba(255, 255, 255, 0.015)
+
+        );
+
+    backdrop-filter: blur(15px);
+
+    overflow: hidden;
+
+    transition:
+
+        transform 0.35s ease,
+
+        border-color 0.35s ease,
+
+        box-shadow 0.35s ease;
+
+}
+
+
+.preventive-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    top: -80px;
+
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 122, 0, 0.12);
+
+    transition: 0.35s ease;
+
+}
+
+
+.preventive-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 122, 0, 0.45);
+
+    box-shadow:
+
+        0 20px 50px rgba(0, 0, 0, 0.35),
+
+        0 0 25px rgba(255, 122, 0, 0.12);
+
+}
+
+
+.preventive-card:hover::before {
+
+    transform: scale(1.8);
+
+}
+
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.card-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+
+    height: 58px;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 122, 0, 0.1);
+
+    border: 1px solid rgba(255, 122, 0, 0.2);
+
+    color: var(--fixit-orange);
+
+    font-size: 23px;
+
+    transition: 0.35s ease;
+
+}
+
+
+.preventive-card:hover .card-icon {
+
+    background: var(--fixit-orange);
+
+    color: #080b12;
+
+    transform: rotate(-5deg) scale(1.08);
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 28px;
+
+    color: rgba(255, 255, 255, 0.2);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.preventive-card h3 {
+
+    margin-bottom: 13px;
+
+    font-size: 21px;
+
+}
+
+
+.preventive-card p {
+
+    color: #9da5b4;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   TIP
+========================================= */
+
+.tip {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+
+    color: var(--fixit-orange);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.tip i {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 122, 0, 0.12);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   BOTTOM REMINDER
+========================================= */
+
+.preventive-bottom {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    max-width: 850px;
+
+    margin: 65px auto 0;
+
+    padding: 25px 30px;
+
+    border-left: 3px solid var(--fixit-orange);
+
+    border-radius: 12px;
+
+    background: rgba(255, 122, 0, 0.06);
+
+}
+
+
+.bottom-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 122, 0, 0.12);
+
+    color: var(--fixit-orange);
+
+    font-size: 22px;
+
+}
+
+
+.preventive-bottom h3 {
+
+    margin-bottom: 5px;
+
+    font-size: 18px;
+
+}
+
+
+.preventive-bottom p {
+
+    margin: 0;
+
+    color: #9da5b4;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .preventive-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .preventive-section {
+
+        padding: 75px 5%;
+
+    }
+
+
+    .preventive-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .preventive-card {
+
+        min-height: auto;
+
+    }
+
+
+    .preventive-bottom {
+
+        align-items: flex-start;
+
+        padding: 22px;
+
+    }
+
+}
+
+/* =========================================
+   FIXIT HARDWARE PARTS SECTION
+========================================= */
+
+.fixit-parts-section {
+
+    position: relative;
+
+    padding: 120px 8%;
+
+    background:
+
+        radial-gradient(
+
+            circle at 85% 5%,
+
+            rgba(255, 122, 0, 0.12),
+
+            transparent 32%
+
+        ),
+
+        radial-gradient(
+
+            circle at 10% 90%,
+
+            rgba(255, 122, 0, 0.05),
+
+            transparent 30%
+
+        ),
+
+        #080b12;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.fixit-parts-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    top: -220px;
+
+    right: -150px;
+
+    border: 1px solid rgba(255, 122, 0, 0.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.fixit-parts-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+
+    height: 600px;
+
+    bottom: -400px;
+
+    left: -300px;
+
+    border: 1px solid rgba(255, 122, 0, 0.06);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.fixit-parts-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+
+}
+
+
+.fixit-parts-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 16px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(255, 122, 0, 0.3);
+
+    border-radius: 999px;
+
+    background: rgba(255, 122, 0, 0.07);
+
+    color: #ff7a00;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+
+}
+
+
+.fixit-parts-label i {
+
+    font-size: 12px;
+
+}
+
+
+.fixit-parts-header h1 {
+
+    margin: 0;
+
+    font-size: clamp(42px, 5.5vw, 72px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 850;
+
+}
+
+
+.fixit-parts-header h1 span {
+
+    color: #ff7a00;
+
+}
+
+
+.fixit-parts-header p {
+
+    max-width: 630px;
+
+    margin: 25px auto 0;
+
+    color: #9da5b4;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.fixit-parts-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.fixit-parts-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(255, 255, 255, 0.075),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+
+        transform 0.4s ease,
+
+        border-color 0.4s ease,
+
+        box-shadow 0.4s ease;
+
+}
+
+
+.fixit-parts-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: rgba(255, 122, 0, 0.55);
+
+    box-shadow:
+
+        0 25px 60px rgba(0, 0, 0, 0.42),
+
+        0 0 35px rgba(255, 122, 0, 0.12);
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.fixit-parts-image {
+
+    position: relative;
+
+    height: 245px;
+
+    overflow: hidden;
+
+    background: #111827;
+
+}
+
+
+.fixit-parts-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255, 122, 0, 0.12),
+
+            transparent 45%
+
+        );
+
+    pointer-events: none;
+
+}
+
+
+.fixit-parts-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(8, 11, 18, 0.9),
+
+            transparent 58%
+
+        );
+
+    pointer-events: none;
+
+}
+
+
+.fixit-parts-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+
+        transform 0.6s ease,
+
+        filter 0.6s ease;
+
+}
+
+
+.fixit-parts-card:hover .fixit-parts-image img {
+
+    transform: scale(1.08);
+
+    filter: brightness(1.08);
+
+}
+
+
+/* =========================================
+   CATEGORY TAG
+========================================= */
+
+.fixit-parts-tag {
+
+    position: absolute;
+
+    z-index: 3;
+
+    top: 18px;
+
+    left: 18px;
+
+    padding: 7px 11px;
+
+    border: 1px solid rgba(255, 122, 0, 0.35);
+
+    border-radius: 7px;
+
+    background: rgba(8, 11, 18, 0.78);
+
+    color: #ff9d3d;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.fixit-parts-content {
+
+    position: relative;
+
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    padding: 30px;
+
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.fixit-parts-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 54px;
+
+    height: 54px;
+
+    margin-bottom: 21px;
+
+    border: 1px solid rgba(255, 122, 0, 0.22);
+
+    border-radius: 15px;
+
+    background: rgba(255, 122, 0, 0.1);
+
+    color: #ff7a00;
+
+    font-size: 21px;
+
+    transition:
+
+        transform 0.35s ease,
+
+        background 0.35s ease,
+
+        color 0.35s ease;
+
+}
+
+
+.fixit-parts-card:hover .fixit-parts-icon {
+
+    transform: rotate(-6deg) scale(1.08);
+
+    background: #ff7a00;
+
+    color: #080b12;
+
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.fixit-parts-number {
+
+    position: absolute;
+
+    top: 32px;
+
+    right: 30px;
+
+    color: rgba(255, 255, 255, 0.18);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.fixit-parts-content h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+}
+
+
+.fixit-parts-content h4 {
+
+    margin: 0 0 16px;
+
+    color: #ff9d3d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.fixit-parts-content p {
+
+    margin: 0 0 26px;
+
+    color: #9da5b4;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================
+   LINK
+========================================= */
+
+.fixit-parts-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: auto;
+
+    color: #ff7a00;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+
+        color 0.3s ease,
+
+        gap 0.3s ease;
+
+}
+
+
+.fixit-parts-link i {
+
+    font-size: 12px;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.fixit-parts-link:hover {
+
+    color: #ff9d3d;
+
+}
+
+
+.fixit-parts-link:hover i {
+
+    transform: translateX(6px);
+
+}
+
+/* =========================================
+   VIRTUAL PC BUILDER CTA
+========================================= */
+
+.virtual-pc-builder-cta {
+    width: 100%;
+    padding: 35px 6% 20px;
+}
+
+.virtual-pc-builder-content {
+    width: 100%;
+    min-height: 190px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    padding: 35px 45px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 107, 0, 0.12),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    border: 1px solid rgba(255, 107, 0, 0.25);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ICON */
+
+.virtual-pc-builder-icon {
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #ff6b00;
+
+    color: white;
+
+    font-size: 32px;
+}
+
+
+/* TEXT */
+
+.virtual-pc-builder-text {
+    flex: 1;
+}
+
+.virtual-pc-builder-text span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ff6b00;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.virtual-pc-builder-text h2 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+}
+
+.virtual-pc-builder-text p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #aaa;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* BUTTON */
+
+.virtual-pc-builder-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    padding: 16px 24px;
+
+    border-radius: 10px;
+
+    background: #ff6b00;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.virtual-pc-builder-button:hover {
+    background: #ff8126;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .virtual-pc-builder-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px;
+    }
+
+    .virtual-pc-builder-button {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   REPAIR GUIDE SECTION
+========================================= */
+
+.repair-guides-section {
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+
+}
+
+
+.repair-guides-header {
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #ff6b00;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.repair-guides-header h1 {
+
+    margin: 0 0 12px;
+
+    color: white;
+
+    font-size: 42px;
+
+}
+
+
+.repair-guides-header p {
+
+    margin: 0;
+
+    color: #888;
+
+}
+
+
+/* =========================================
+   CARD GRID
+========================================= */
+
+.repair-guides-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.repair-guide-card {
+
+    position: relative;
+
+    min-height: 320px;
+
+    overflow: hidden;
+
+    background: #191919;
+
+    border: 1px solid #303030;
+
+    border-radius: 18px;
+
+}
+
+
+/* =========================================
+   FRONT
+========================================= */
+
+.repair-card-front {
+
+    min-height: 320px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.repair-guide-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.repair-guide-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(255, 107, 0, 0.12);
+
+    color: #ff6b00;
+
+    font-size: 22px;
+
+}
+
+
+.difficulty {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 12px;
+
+}
+
+
+.difficulty i {
+
+    font-size: 7px;
+
+}
+
+
+.difficulty.easy {
+
+    color: #4ade80;
+
+}
+
+
+.repair-card-front h3 {
+
+    margin: 0 0 12px;
+
+    color: white;
+
+    font-size: 20px;
+
+}
+
+
+.repair-card-front p {
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.repair-guide-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+}
+
+
+.repair-guide-footer span {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.read-guide-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #ff6b00;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.read-guide-btn i {
+
+    transition: 0.25s ease;
+
+}
+
+
+.read-guide-btn:hover i {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================
+   SOLUTION PANEL
+========================================= */
+
+.repair-card-solution {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    background: #191919;
+
+    transform: translateX(100%);
+
+    transition:
+
+        transform 0.45s
+        cubic-bezier(0.77, 0, 0.18, 1);
+
+}
+
+
+.repair-guide-card.show-solution
+.repair-card-solution {
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-guide-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #ff6b00;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+.repair-card-solution h3 {
+
+    margin: 0 0 20px;
+
+    color: white;
+
+    font-size: 21px;
+
+}
+
+
+/* =========================================
+   REPAIR STEPS
+========================================= */
+
+.repair-step {
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #2d2d2d;
+
+}
+
+
+.repair-step > span {
+
+    flex-shrink: 0;
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(255, 107, 0, 0.12);
+
+    color: #ff6b00;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.repair-step h4 {
+
+    margin: 0 0 6px;
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+
+.repair-step p {
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .repair-guides-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .repair-guides-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   FIXIT RESPONSIVE SYSTEM
+   Desktop → Laptop → Tablet → Mobile
+===================================================== */
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    header {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 58px;
+    }
+
+    .hardware-container {
+        max-width: 1450px;
+    }
+
+}
+
+
+/* =====================================================
+   LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    /* NAVBAR */
+
+    header {
+        padding: 0 30px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 220px;
+    }
+
+
+    /* HERO */
+
+    .hero-content {
+        width: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    /* HARDWARE */
+
+    .hardware-container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .hardware-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* REPAIR GUIDES */
+
+    .repair-guides-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    header {
+        height: auto;
+        min-height: 70px;
+        padding: 15px 25px;
+
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        padding-top: 10px;
+    }
+
+    .nav-right {
+        margin-left: auto;
+    }
+
+    .search-box {
+        width: 200px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 430px;
+        height: auto;
+
+        background-position: center;
+    }
+
+    .hero-overlay {
+        padding: 70px 35px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 6vw, 50px);
+    }
+
+
+    /* HARDWARE */
+
+    .hardware-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* REPAIR GUIDES */
+
+    .repair-guides-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* VIRTUAL PC CTA */
+
+    .virtual-pc-builder-content {
+        gap: 20px;
+        padding: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL TABLET / LARGE PHONE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* NAVBAR */
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 15px;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    nav a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .nav-right {
+        width: 100%;
+        margin: 0;
+    }
+
+    .search-box {
+        flex: 1;
+        width: auto;
+    }
+
+    header button {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .hero-overlay {
+        padding: 60px 25px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(32px, 8vw, 44px);
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+
+    /* HARDWARE GRID */
+
+    .hardware-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hardware-section {
+        padding: 25px 15px;
+    }
+
+    .hardware-left,
+    .hardware-right {
+        padding: 18px;
+    }
+
+
+    /* REPAIR GUIDE */
+
+    .repair-guides-section {
+        padding: 60px 18px;
+    }
+
+    .repair-guides-header h1 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+
+    /* SEARCH SECTION */
+
+    .search-section {
+        margin: 20px 15px;
+        padding: 18px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 20px;
+    }
+
+    .repair-search {
+        width: 100%;
+    }
+
+    .repair-search input {
+        width: 100%;
+    }
+
+
+    /* PREVENTIVE */
+
+    .preventive-section,
+    .fixit-parts-section {
+        padding: 75px 5%;
+    }
+
+
+    /* VIRTUAL PC BUILDER */
+
+    .virtual-pc-builder-cta {
+        padding: 25px 15px;
+    }
+
+    .virtual-pc-builder-content {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 28px;
+    }
+
+    .virtual-pc-builder-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    /* NAVBAR */
+
+    header {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    .search-box {
+        height: 38px;
+    }
+
+    .search-box input {
+        font-size: 12px;
+    }
+
+    header button {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 500px;
+
+        background-position: 65% center;
+    }
+
+    .hero-overlay {
+        padding: 50px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+
+    /* HARDWARE */
+
+    .hardware-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hardware-card img {
+        height: 170px;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .view-all {
+        font-size: 11px;
+    }
+
+
+    /* PROBLEMS */
+
+    .problem-item {
+        padding: 10px;
+    }
+
+    .problem-item h4 {
+        font-size: 11px;
+    }
+
+
+    /* REPAIR GUIDE */
+
+    .repair-guides-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .repair-guide-card {
+        min-height: 350px;
+    }
+
+    .repair-card-front {
+        min-height: 350px;
+        padding: 22px;
+    }
+
+
+    /* PREVENTIVE CARDS */
+
+    .preventive-card {
+        padding: 25px;
+    }
+
+
+    /* PARTS CARDS */
+
+    .fixit-parts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fixit-parts-image {
+        height: 220px;
+    }
+
+    .fixit-parts-content {
+        padding: 25px;
+    }
+
+
+    /* VIRTUAL PC CTA */
+
+    .virtual-pc-builder-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+    .virtual-pc-builder-text h2 {
+        font-size: 25px;
+    }
+
+    .virtual-pc-builder-text p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hardware-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .repair-card-front,
+    .repair-card-solution {
+        padding: 18px;
+    }
+
+}
