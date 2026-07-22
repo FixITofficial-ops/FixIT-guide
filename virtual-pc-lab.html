@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Virtual PC Lab | FIXIT</title>
+
+    <link
+        rel="icon"
+        href="images/favicon.png"
+        type="image/png"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <!-- Virtual Lab CSS -->
+    <link
+        rel="stylesheet"
+        href="css/lablab.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!--==================================================
+    LAB INTRO
+==================================================-->
+
+<section class="lab-intro">
+
+    <span class="lab-label">
+
+        <i class="fa-solid fa-flask"></i>
+
+        VIRTUAL PC LAB
+
+    </span>
+
+
+    <h1>
+
+        Build Your
+
+        <span>Virtual PC</span>
+
+    </h1>
+
+
+    <p>
+
+        Learn how computer components work by
+        assembling your own virtual computer.
+
+    </p>
+
+
+    <div class="difficulty-buttons">
+
+        <button
+            class="difficulty active"
+            type="button"
+        >
+
+            Beginner
+
+        </button>
+
+
+        <button
+            class="difficulty"
+            type="button"
+        >
+
+            Intermediate
+
+        </button>
+
+
+        <button
+            class="difficulty"
+            type="button"
+        >
+
+            Challenge Mode
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!--==================================================
+    MAIN PC LAB
+==================================================-->
+
+<main class="pc-lab">
+
+
+    <!--==================================================
+        LEFT PANEL
+    ==================================================-->
+
+    <aside class="components-panel">
+
+
+        <div class="panel-heading">
+
+            <div>
+
+                <span class="small-label">
+
+                    PC COMPONENTS
+
+                </span>
+
+
+                <h2>
+
+                    Parts
+
+                </h2>
+
+            </div>
+
+
+            <span class="installed-count">
+
+                <span id="installedCount">0</span> / 6
+
+            </span>
+
+        </div>
+
+
+        <div class="component-list">
+
+
+            <!-- CPU -->
+
+            <div
+                class="component-card"
+                draggable="true"
+                data-component="cpu"
+            >
+
+                <div class="component-icon">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                </div>
+
+
+                <div class="component-text">
+
+                    <h3>CPU</h3>
+
+                    <span>Processor</span>
+
+                </div>
+
+
+                <i class="fa-solid fa-grip-lines"></i>
+
+            </div>
+
+
+            <!-- RAM -->
+
+            <div
+                class="component-card"
+                draggable="true"
+                data-component="ram"
+            >
+
+                <div class="component-icon">
+
+                    <i class="fa-solid fa-memory"></i>
+
+                </div>
+
+
+                <div class="component-text">
+
+                    <h3>RAM</h3>
+
+                    <span>Memory</span>
+
+                </div>
+
+
+                <i class="fa-solid fa-grip-lines"></i>
+
+            </div>
+
+
+            <!-- GPU -->
+
+            <div
+                class="component-card"
+                draggable="true"
+                data-component="gpu"
+            >
+
+                <div class="component-icon">
+
+                    <i class="fa-solid fa-display"></i>
+
+                </div>
+
+
+                <div class="component-text">
+
+                    <h3>GPU</h3>
+
+                    <span>Graphics Card</span>
+
+                </div>
+
+
+                <i class="fa-solid fa-grip-lines"></i>
+
+            </div>
+
+
+            <!-- SSD -->
+
+            <div
+                class="component-card"
+                draggable="true"
+                data-component="ssd"
+            >
+
+                <div class="component-icon">
+
+                    <i class="fa-solid fa-hard-drive"></i>
+
+                </div>
+
+
+                <div class="component-text">
+
+                    <h3>SSD</h3>
+
+                    <span>Storage</span>
+
+                </div>
+
+
+                <i class="fa-solid fa-grip-lines"></i>
+
+            </div>
+
+
+            <!-- PSU -->
+
+            <div
+                class="component-card"
+                draggable="true"
+                data-component="psu"
+            >
+
+                <div class="component-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+
+                <div class="component-text">
+
+                    <h3>PSU</h3>
+
+                    <span>Power Supply</span>
+
+                </div>
+
+
+                <i class="fa-solid fa-grip-lines"></i>
+
+            </div>
+
+
+            <!-- COOLING -->
+
+            <div
+                class="component-card"
+                draggable="true"
+                data-component="cooling"
+            >
+
+                <div class="component-icon">
+
+                    <i class="fa-solid fa-fan"></i>
+
+                </div>
+
+
+                <div class="component-text">
+
+                    <h3>COOLING</h3>
+
+                    <span>CPU Cooler</span>
+
+                </div>
+
+
+                <i class="fa-solid fa-grip-lines"></i>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!--==================================================
+        CENTER BUILD AREA
+    ==================================================-->
+
+    <section class="build-area">
+
+
+        <div class="build-heading">
+
+            <div>
+
+                <span class="small-label">
+
+                    BUILD AREA
+
+                </span>
+
+
+                <h2>
+
+                    Assemble Your PC
+
+                </h2>
+
+            </div>
+
+
+            <i class="fa-solid fa-circle-info"></i>
+
+        </div>
+
+
+        <div class="build-instruction">
+
+            <i class="fa-solid fa-hand-pointer"></i>
+
+            <span>
+
+                Drag each component into its correct motherboard slot.
+
+            </span>
+
+        </div>
+
+
+        <!--==================================================
+            MOTHERBOARD
+        ==================================================-->
+
+        <div class="motherboard-area">
+
+
+            <div class="motherboard">
+
+
+                <!-- CPU -->
+
+                <div
+                    class="motherboard-slot cpu-slot"
+                    data-slot="cpu"
+                >
+
+                    <div class="socket-bracket">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <strong>CPU</strong>
+
+                    <small>DROP HERE</small>
+
+                </div>
+
+
+                <!-- RAM -->
+
+                <div
+                    class="motherboard-slot ram-slot"
+                    data-slot="ram"
+                >
+
+                    <div class="ram-slots-visual">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-memory"></i>
+
+                    <strong>RAM</strong>
+
+                    <small>DROP HERE</small>
+
+                </div>
+
+
+                <!-- GPU -->
+
+                <div
+                    class="motherboard-slot gpu-slot"
+                    data-slot="gpu"
+                >
+
+                    <i class="fa-solid fa-display"></i>
+
+                    <strong>GPU / PCIe</strong>
+
+                    <small>DROP HERE</small>
+
+                </div>
+
+
+                <!-- SSD -->
+
+                <div
+                    class="motherboard-slot ssd-slot"
+                    data-slot="ssd"
+                >
+
+                    <i class="fa-solid fa-hard-drive"></i>
+
+                    <strong>M.2 SSD</strong>
+
+                    <small>DROP HERE</small>
+
+                </div>
+
+
+                <!-- PSU -->
+
+                <div
+                    class="motherboard-slot psu-slot"
+                    data-slot="psu"
+                >
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <strong>PSU</strong>
+
+                    <small>DROP HERE</small>
+
+                </div>
+
+
+                <!-- COOLING -->
+
+                <div
+                    class="motherboard-slot cooling-slot"
+                    data-slot="cooling"
+                >
+
+                    <i class="fa-solid fa-fan"></i>
+
+                    <strong>COOLER</strong>
+
+                    <small>DROP HERE</small>
+
+                </div>
+
+
+                <!-- CIRCUIT DETAILS -->
+
+                <div class="board-line line-one"></div>
+
+                <div class="board-line line-two"></div>
+
+                <div class="board-line line-three"></div>
+
+
+                <div class="board-chip chip-one"></div>
+
+                <div class="board-chip chip-two"></div>
+
+
+                <span class="motherboard-label">
+
+                    MOTHERBOARD
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="build-actions">
+
+
+            <button
+                class="reset-btn"
+                id="resetBuild"
+                type="button"
+            >
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset Build
+
+            </button>
+
+
+            <button
+                class="check-btn"
+                id="checkBuild"
+                type="button"
+            >
+
+                Check My Build
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!--==================================================
+        RIGHT INFORMATION PANEL
+    ==================================================-->
+
+    <aside class="info-panel">
+
+
+        <div class="info-icon">
+
+            <i
+                class="fa-solid fa-circle-info"
+                id="infoIcon"
+            ></i>
+
+        </div>
+
+
+        <span class="small-label">
+
+            COMPONENT INFO
+
+        </span>
+
+
+        <h2 id="infoTitle">
+
+            Select a Component
+
+        </h2>
+
+
+        <p
+            class="info-description"
+            id="infoDescription"
+        >
+
+            Select a component from the panel
+            to learn more about it.
+
+        </p>
+
+
+        <div class="info-block">
+
+
+            <h3>
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                What does it do?
+
+            </h3>
+
+
+            <p id="whatItDoes">
+
+                Component information will appear here.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-block">
+
+
+            <h3>
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                Installation
+
+            </h3>
+
+
+            <p id="installationInfo">
+
+                Drag the component into the
+                correct motherboard slot.
+
+            </p>
+
+        </div>
+
+
+        <div class="difficulty-info">
+
+            <span>
+
+                Difficulty
+
+            </span>
+
+
+            <strong id="difficultyLevel">
+
+                Select a part
+
+            </strong>
+
+        </div>
+
+    </aside>
+
+</main>
+
+
+<!--==================================================
+    BUILD PROGRESS
+==================================================-->
+
+<section class="progress-section">
+
+
+    <div class="progress-header">
+
+
+        <div>
+
+            <span class="small-label">
+
+                BUILD PROGRESS
+
+            </span>
+
+
+            <h2>
+
+                Assemble Your Computer
+
+            </h2>
+
+        </div>
+
+
+        <strong
+            class="progress-count"
+            id="progressCount"
+        >
+
+            0 / 6
+
+        </strong>
+
+    </div>
+
+
+    <div class="progress-bar">
+
+        <div
+            class="progress-fill"
+            id="progressFill"
+        ></div>
+
+    </div>
+
+
+    <div class="progress-steps">
+
+
+        <div
+            class="progress-step"
+            data-progress="cpu"
+        >
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-microchip"></i>
+
+            </div>
+
+            <span>CPU</span>
+
+        </div>
+
+
+        <div
+            class="progress-step"
+            data-progress="ram"
+        >
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-memory"></i>
+
+            </div>
+
+            <span>RAM</span>
+
+        </div>
+
+
+        <div
+            class="progress-step"
+            data-progress="gpu"
+        >
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-display"></i>
+
+            </div>
+
+            <span>GPU</span>
+
+        </div>
+
+
+        <div
+            class="progress-step"
+            data-progress="ssd"
+        >
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-hard-drive"></i>
+
+            </div>
+
+            <span>SSD</span>
+
+        </div>
+
+
+        <div
+            class="progress-step"
+            data-progress="psu"
+        >
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-bolt"></i>
+
+            </div>
+
+            <span>PSU</span>
+
+        </div>
+
+
+        <div
+            class="progress-step"
+            data-progress="cooling"
+        >
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-fan"></i>
+
+            </div>
+
+            <span>Cooling</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="js/lab.js"></script>
+
+</body>
+
+</html>
