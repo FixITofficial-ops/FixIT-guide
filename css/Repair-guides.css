@@ -1,0 +1,460 @@
+/* =========================================
+   REPAIR GUIDE SECTION
+========================================= */
+/*================ REPAIR GUIDE BACKGROUND ================*/
+
+/*================ REPAIR GUIDE BACKGROUND ================*/
+
+.repair-guides-section{
+    position: relative;
+    width: 100%;
+    padding: 110px 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,122,0,.08),
+            transparent 35%
+        ),
+        #080b12;
+
+    color:#fff;
+}
+
+/* Inner container */
+
+.repair-guides-container{
+    max-width:1250px;
+    margin:0 auto;
+    padding:0 30px;
+}
+
+
+.repair-guides-header {
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #ff6b00;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.repair-guides-header h1 {
+
+    margin: 0 0 12px;
+
+    color: white;
+
+    font-size: 42px;
+
+}
+
+
+.repair-guides-header p {
+
+    margin: 0;
+
+    color: #888;
+
+}
+
+
+/* =========================================
+   CARD GRID
+========================================= */
+
+.repair-guides-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.repair-guide-card {
+
+    position: relative;
+
+    min-height: 320px;
+
+    overflow: hidden;
+
+    background: #191919;
+
+    border: 1px solid #303030;
+
+    border-radius: 18px;
+
+}
+
+
+/* =========================================
+   FRONT
+========================================= */
+
+.repair-card-front {
+
+    min-height: 320px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.repair-guide-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.repair-guide-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(255, 107, 0, 0.12);
+
+    color: #ff6b00;
+
+    font-size: 22px;
+
+}
+
+
+.difficulty {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 12px;
+
+}
+
+
+.difficulty i {
+
+    font-size: 7px;
+
+}
+
+
+.difficulty.easy {
+
+    color: #4ade80;
+
+}
+
+.difficulty.hard {
+
+    color: #f87171;
+
+}
+
+.difficulty.medium {
+
+    color: #debc4a;
+
+}
+
+
+
+.repair-card-front h3 {
+
+    margin: 0 0 12px;
+
+    color: white;
+
+    font-size: 20px;
+
+}
+
+
+.repair-card-front p {
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.repair-guide-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+}
+
+
+.repair-guide-footer span {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.read-guide-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #ff6b00;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.read-guide-btn i {
+
+    transition: 0.25s ease;
+
+}
+
+
+.read-guide-btn:hover i {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================
+   SOLUTION PANEL
+========================================= */
+
+.repair-card-solution {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    background: #191919;
+
+    transform: translateX(100%);
+
+    transition:
+
+        transform 0.45s
+        cubic-bezier(0.77, 0, 0.18, 1);
+
+}
+
+
+.repair-guide-card.show-solution
+.repair-card-solution {
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-guide-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #ff6b00;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+.repair-card-solution h3 {
+
+    margin: 0 0 20px;
+
+    color: white;
+
+    font-size: 21px;
+
+}
+
+
+/* =========================================
+   REPAIR STEPS
+========================================= */
+
+.repair-step {
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #2d2d2d;
+
+}
+
+
+.repair-step > span {
+
+    flex-shrink: 0;
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(255, 107, 0, 0.12);
+
+    color: #ff6b00;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.repair-step h4 {
+
+    margin: 0 0 6px;
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+
+.repair-step p {
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .repair-guides-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .repair-guides-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

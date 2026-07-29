@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIXIT | Contact</title>
+
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<!-- Back Button -->
+<a href="index.html" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Back</span>
+</a>
+
+
+<body>
+
+
+<section class="contact">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="contact-header">
+
+        <span>WE'RE HERE TO HELP</span>
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Have questions, feedback, or need support?
+            <br>
+            We'd love to hear from you.
+        </p>
+
+    </div>
+
+    <!-- ================= CONTACT INFO ================= -->
+
+    <div class="contact-info">
+
+        <!-- Email -->
+        <div class="info-card">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <h3>Email</h3>
+
+            <p>fixit.officialwebsite@gmail.com</p>
+
+        </div>
+
+        <!-- Phone -->
+        <div class="info-card">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <h3>Phone</h3>
+
+            <p>+63 991 065 7240</p>
+
+        </div>
+
+        <!-- Location -->
+        <div class="info-card">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h3>Location</h3>
+
+            <p>Pasig city, pinagbuhatan, Philippines</p>
+
+        </div>
+
+        <!-- Working Hours -->
+        <div class="info-card">
+
+            <i class="fa-regular fa-clock"></i>
+
+            <h3>Working Hours</h3>
+
+            <p>
+                Monday - Friday
+                <br>
+                8:00 AM - 5:00 PM
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <div class="contact-container">
+
+        <!-- ================= CONTACT FORM ================= -->
+
+        <div class="contact-form">
+
+            <h2>
+
+                <i class="fa-regular fa-paper-plane"></i>
+
+                Send Us a Message
+
+            </h2>
+
+            <form id="contactForm">
+
+                <div class="input-row">
+
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Your Name"
+                        required>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Email Address"
+                        required>
+
+                </div>
+
+                <input
+                    id="subject"
+                    type="text"
+                    placeholder="Subject"
+                    required>
+
+                <textarea
+                    id="message"
+                    rows="7"
+                    placeholder="Type your message..."
+                    required></textarea>
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- ================= RATING CARD ================= -->
+
+        <div class="rating-card">
+
+            <h2>
+
+                <i class="fa-regular fa-star"></i>
+
+                Rate Your Experience
+
+            </h2>
+
+            <p>
+
+                We'd love to know what you think about FIXIT.
+
+            </p>
+
+            <div class="stars">
+
+                <i class="fa-regular fa-star" data-value="1"></i>
+                <i class="fa-regular fa-star" data-value="2"></i>
+                <i class="fa-regular fa-star" data-value="3"></i>
+                <i class="fa-regular fa-star" data-value="4"></i>
+                <i class="fa-regular fa-star" data-value="5"></i>
+
+            </div>
+
+            <p id="ratingResult">
+
+                No rating selected.
+
+            </p>
+
+            <div class="rating-email">
+
+                <strong>Email:</strong>
+
+                <br>
+
+                fixit.officialwebsite@gmail.com
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Contact JavaScript -->
+<script src="js/contact.js"></script>
+
+</body>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "cUxCyAQ4qyeD_o83V",
+});
+</script>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer reveal">
+
+    <div class="footer-container">
+
+        <!-- Logo -->
+        <div class="footer-box">
+            <h2>FIX<span>IT</span></h2>
+            <p>
+                Your trusted partner for computer troubleshooting,
+                hardware guides, software solutions, and PC maintenance.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="hardware.html">Hardware</a>
+            <a href="repair-guides.html">Repair-Guides</a>
+            <a href="maintenance.html">Maintenance</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+
+            <p><i class="fa-solid fa-phone"></i> +63 991 065 7240</p>
+            <p><i class="fa-solid fa-location-dot"></i> Philippines</p>
+            <p><i class="fa-solid fa-envelope"></i> fixit.officialwebsite@gmail.com</p>
+
+        </div>
+
+        <!-- Social -->
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="https://www.facebook.com/toppa.endoma"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="https://www.instagram.com/pottpots16/"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 FixIT. All Rights Reserved.
+    </div>
+
+</footer>
+
+<script src="js/contact.js"></script>
+<script src="js/animation.js"></script>
+
+</body>
+</html>

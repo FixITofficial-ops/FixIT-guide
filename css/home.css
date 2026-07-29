@@ -1,0 +1,522 @@
+/*================ HERO ================*/
+
+.hero{
+
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(10,10,10,.98) 0%,
+        rgba(10,10,10,.95) 30%,
+        rgba(10,10,10,.70) 50%,
+        rgba(10,10,10,.20) 68%,
+        rgba(10,10,10,.55) 100%
+    ),
+    url("../images/guide.png");
+
+    background-size:cover;
+    background-position:right center;
+    background-repeat:no-repeat;
+
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.hero-overlay{
+    width:100%;
+    max-width:1300px;
+    margin:auto;
+    padding:0 25px;
+}
+
+.hero-content{
+    width: 560px;
+}
+
+
+/* Heading */
+.hero-content h1{
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+/* Paragraph */
+.hero-content p{
+    font-size: 18px;
+    line-height: 1.7;
+    color: #bdbdbd;
+    margin-bottom: 28px;
+    max-width: 500px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+/*================ BUTTONS ================*/
+
+.btn-primary,
+.btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:13px 26px;
+
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+
+    border-radius:50px;
+    cursor:pointer;
+
+    transition:all .35s ease;
+}
+
+/*================ PRIMARY BUTTON ================*/
+
+.btn-primary{
+    position:relative;
+    overflow:hidden;
+
+    background:#ff7a00;
+    color:#fff;
+
+    box-shadow:
+        0 8px 18px rgba(255,122,0,.35),
+        0 0 30px rgba(255,122,0,.18);
+}
+
+/* Keep text above shine */
+.btn-primary span,
+.btn-primary i{
+    position:relative;
+    z-index:2;
+}
+
+/* Shine Effect */
+.btn-primary::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+    transition:.75s ease;
+}
+
+.btn-primary:hover::before{
+    left:140%;
+}
+
+/* Hover Effect */
+.btn-primary:hover{
+    background:#ff8c1a;
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(255,122,0,.45),
+        0 0 35px rgba(255,122,0,.25);
+}
+
+/* Arrow Animation */
+.btn-primary i{
+    transition:transform .3s ease;
+}
+
+.btn-primary:hover i{
+    transform:translateX(5px);
+}
+
+/* Click Effect */
+.btn-primary:active{
+    transform:scale(.97);
+}
+
+/*================ SECONDARY BUTTON ================*/
+
+.btn-secondary{
+    background:transparent;
+    color:#fff;
+
+    border:2px solid #444;
+}
+
+.btn-secondary:hover{
+    border-color:#ff7a00;
+    color:#ff7a00;
+
+    background:rgba(255,122,0,.08);
+
+    box-shadow:0 0 18px rgba(255,122,0,.18);
+
+    transform:translateY(-4px);
+}
+
+.btn-secondary:active{
+    transform:scale(.97);
+}
+
+/*================ HARDWARE SECTION ================*/
+
+.hardware-section {
+
+    padding: 35px 25px;
+
+    background: #0c0d0e;
+
+}
+
+
+.hardware-container {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 3fr 1.2fr;
+
+    gap: 20px;
+
+}
+
+
+/*================ HARDWARE PANEL ================*/
+
+.hardware-left {
+
+    padding: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #111
+    );
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.02);
+
+}
+
+
+/*================ PROBLEMS PANEL ================*/
+
+.hardware-right {
+
+    padding: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #111
+    );
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.02);
+
+}
+
+
+/*================ SECTION HEADING ================*/
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 20px;
+
+    margin: 0;
+
+}
+
+
+.view-all {
+
+    color: #ff7a00;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+.view-all i {
+
+    margin-left: 5px;
+
+    transition: .3s;
+
+}
+
+
+.view-all:hover i {
+
+    transform: translateX(5px);
+
+}
+
+
+/*================ HARDWARE GRID ================*/
+
+.hardware-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.hardware-card {
+
+    background: #1c1c1c;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    transition: .35s ease;
+
+}
+
+
+.hardware-card img {
+
+    width: 100%;
+
+    height: 125px;
+
+    object-fit: contain;
+
+    transition: .35s;
+
+}
+
+
+.hardware-card h3 {
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+}
+
+
+.hardware-card span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #999;
+
+    font-size: 11px;
+
+}
+
+
+.hardware-card a {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #ff7a00;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+}
+
+
+.hardware-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #ff7a00;
+
+    box-shadow: 0 10px 25px rgba(255,122,0,.15);
+
+}
+
+
+.hardware-card:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+/*================ PROBLEM LIST ================*/
+
+.problem-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.problem-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    background: #1c1c1c;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 9px;
+
+    transition: .3s;
+
+}
+
+
+.problem-item i {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #291b0e;
+
+    border-radius: 7px;
+
+    color: #ff7a00;
+
+}
+
+
+.problem-item h4 {
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.problem-item span {
+
+    color: #777;
+
+    font-size: 10px;
+
+}
+
+
+.problem-item:hover {
+
+    transform: translateX(5px);
+
+    border-color: #ff7a00;
+
+}
+
+
+/*================ RESPONSIVE ================*/
+
+@media (max-width: 1100px) {
+
+    .hardware-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .hardware-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hardware-section {
+
+        padding: 30px 20px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hardware-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
